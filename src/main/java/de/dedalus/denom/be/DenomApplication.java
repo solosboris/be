@@ -21,7 +21,7 @@ public class DenomApplication {
 
 	@Value("${tomcat.port:8080}")
 	private int port;
-	@Value("${tomcat.contextPath:/apin/denom}")
+	@Value("${tomcat.contextPath:/api/denom}")
 	private String contextPath;
 
 	public static void main(String[] args) {

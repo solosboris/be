@@ -28,7 +28,6 @@ public class TestDenominationController {
     private RestTemplate restTemplate = new RestTemplate();
     private final String url = "http://localhost:8080/api/denom";
 
-
     @Test
     @Ignore
     public void testDenominationValues() throws Exception {
@@ -49,9 +48,12 @@ public class TestDenominationController {
         List<DenominationItem> items = denomination.getItems();
 
         assertTrue(items.size() == 7);
-        items.forEach(
-            denomItem -> log.info(denomItem.toString())
-        );
+        items.stream()
+             .sorted(
+                (dI1, dI2) -> dI2.getMoneyItem().getCent() - dI1.getMoneyItem().getCent()
+             ).forEach(
+                denomItem -> log.info(denomItem.toString())
+             );
         assertTrue(
             items.contains(
                 new DenominationItem(
@@ -124,9 +126,12 @@ public class TestDenominationController {
         List<DenominationItem> items = denomination.getItems();
 
         assertTrue(items.size() == 7);
-        items.forEach(
-            denomItem -> log.info(denomItem.toString())
-        );
+        items.stream()
+              .sorted(
+                (dI1, dI2) -> dI2.getMoneyItem().getCent() - dI1.getMoneyItem().getCent()
+              ).forEach(
+                denomItem -> log.info(denomItem.toString())
+              );
         assertTrue(
             items.contains(
                 new DenominationItem(
