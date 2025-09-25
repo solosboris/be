@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: denom
+logging:
+    pattern:
+        console: "%clr(%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%10.10t]){faint} %clr(%-40.40logger{39}){cyan} %clr(%-20.-20M){blue} %clr(:){faint} %m%n%wEx}}"
+    level:
+        org.springframework.security: DEBUG
+server:
+  port: 8080
+tomcat:
+  port: 8080
+  contextPath: /api/denom
+items:
+    values:
+        - cent: 20000
+          type: NOTE
+        - cent: 10000
+          type: NOTE
+        - cent: 5000
+          type: NOTE
+        - cent: 2000
+          type: NOTE
+        - cent: 1000
+          type: NOTE
+        - cent: 500
+          type: NOTE
+        - cent: 200
+          type: COIN
+        - cent: 100
+          type: COIN
+        - cent: 50
+          type: COIN
+        - cent: 20
+          type: COIN
+        - cent: 10
+          type: COIN
+        - cent: 5
+          type: COIN
+        - cent: 2
+          type: COIN
+        - cent: 1
+          type: COIN
