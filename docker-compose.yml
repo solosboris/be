@@ -1,0 +1,16 @@
+services:
+  backend:
+    container_name: backend
+    build:
+      context: docker-backend
+      dockerfile: Dockerfile
+    image: backend-image:latest
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    networks:
+      backbone:
+
+networks:
+  backbone:
+    external: true
