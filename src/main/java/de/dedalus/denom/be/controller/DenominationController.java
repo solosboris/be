@@ -39,6 +39,7 @@ public class DenominationController {
         return ResponseEntity
                 .ok()
                 .contentType(MediaType.APPLICATION_JSON)
+                .header("Access-Control-Allow-Origin", "*")
                 .body(new Denomination(items));
     }
 
@@ -62,6 +63,7 @@ public class DenominationController {
         return ResponseEntity
                 .ok()
                 .contentType(MediaType.APPLICATION_JSON)
+                .header("Access-Control-Allow-Origin", "*")
                 .body(denom);
     }
 
